@@ -188,8 +188,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_WEB1_name'), '_OsDisk_1_f09c66f966be499ca5fae62b7529e1bd'))]"
+                            "storageAccountType": "Premium_LRS"
                         },
                         "deleteOption": "Delete",
                         "diskSizeGB": 30
@@ -198,12 +197,11 @@
                         {
                             "lun": 0,
                             "name": "web1-data1",
-                            "createOption": "Attach",
+                            "createOption": "Empty",
                             "caching": "ReadWrite",
                             "writeAcceleratorEnabled": false,
                             "managedDisk": {
-                                "storageAccountType": "StandardSSD_LRS",
-                                "id": "[resourceId('Microsoft.Compute/disks', 'web1-data1')]"
+                                "storageAccountType": "StandardSSD_LRS"
                             },
                             "deleteOption": "Detach",
                             "diskSizeGB": 16,
